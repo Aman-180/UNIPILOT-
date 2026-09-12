@@ -1,0 +1,73 @@
+# Environment variables / secrets
+.env
+.env.local
+.env.*.local
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# Flask
+.flaskenv
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Node (if any frontend tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Test / coverage
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Misc
+*.bak
+*.tmp

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIPILOT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-blur blur-1"></div>
+<div class="bg-blur blur-2"></div>
+<div class="bg-blur blur-3"></div>
+
+<!-- LOGIN -->
+<div id="loginSection" class="login-page">
+    <div class="login-container glass">
+        <div class="logo">UNI<span>PILOT</span></div>
+        <p class="tagline">Your Personal Student Productivity Hub</p>
+
+        <div class="form-group">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <input type="number" id="ageInput" placeholder="Age">
+        </div>
+        <div class="form-group">
+            <select id="genderInput">
+                <option value="" disabled selected>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <button id="loginBtn" class="primary-btn">Continue →</button>
+    </div>
+</div>
+
+<!-- APP -->
+<div id="mainApp" class="app-container" style="display:none;">
+
+    <!-- TOP BAR -->
+    <header class="top-bar glass">
+        <div>
+            <h1 class="logo">UNI<span>PILOT</span></h1>
+            <p class="subtitle">Stay consistent every day</p>
+        </div>
+        <div class="header-right">
+            <button id="themeToggle" class="icon-btn">🌙</button>
+            <div id="profileAvatar" class="profile-avatar">A</div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+        <!-- HOME TAB -->
+        <div id="homeTab" class="tab-content active">
+
+            <!-- HERO CARD -->
+            <section class="hero-card glass">
+                <div class="hero-text">
+                    <h2 id="welcomeText">Welcome Back 👋</h2>
+                    <p id="streakText">🔥 0 Day Streak — Keep going!</p>
+                </div>
+                <button id="syncBtn" class="primary-btn small-btn">Sync Data</button>
+            </section>
+
+            <!-- STATS GRID -->
+            <section class="stats-grid">
+                <div class="stat-card glass">
+                    <h3>Today's Tasks</h3>
+                    <div class="big-text" id="completedCount">0</div>
+                    <p id="totalCount">of 0 done</p>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Progress</h3>
+                    <div class="big-text" id="progressPercent">0%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar" style="width:0%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TASKS CARD -->
+            <section class="card glass">
+                <div class="section-title">
+                    <h2>Daily Tasks</h2>
+                    <button id="resetBtn" class="mini-btn">Reset</button>
+                </div>
+
+                <!-- ADD TASK INPUT -->
+                <div class="add-task-row">
+                    <input type="text" id="taskInput" class="task-input" placeholder="Add a new task...">
+                    <button id="addTaskBtn" class="mini-btn add-btn">+ Add</button>
+                </div>
+
+                <!-- TASKS LIST -->
+                <div id="tasksContainer">
+                    <p class="empty-msg">No tasks yet. Add one above! 🚀</p>
+                </div>
+            </section>
+
+            <!-- ANALYTICS CARD -->
+            <section class="card glass">
+                <div class="section-title">
+                    <h2>Study Analytics</h2>
+                </div>
+                <div class="analytics-box">
+                    <div class="analytics-item">
+                        <span>Streak</span>
+                        <strong id="analyticsStreak">0 Days</strong>
+                    </div>
+                    <div class="analytics-item">
+                        <span>Avg Score</span>
+                        <strong id="analyticsScore">—</strong>
+                    </div>
+                    <div class="analytics-item">
+                        <span>Total Days</span>
+                        <strong id="analyticsDays">0</strong>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- STATS TAB -->
+        <div id="statsTab" class="tab-content">
+
+            <section class="hero-card glass">
+                <div class="hero-text">
+                    <h2>Your Progress 📈</h2>
+                    <p>All time statistics</p>
+                </div>
+            </section>
+
+            <section class="stats-grid four-grid">
+                <div class="stat-card glass">
+                    <h3>Days Logged</h3>
+                    <div class="big-text" id="stat-days">0</div>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Avg Study</h3>
+                    <div class="big-text" id="stat-study">0h</div>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Avg Score</h3>
+                    <div class="big-text" id="stat-score">0</div>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Best Streak</h3>
+                    <div class="big-text" id="stat-streak">0🔥</div>
+                </div>
+            </section>
+
+            <section class="card glass">
+                <div class="section-title">
+                    <h2>Recent Logs</h2>
+                </div>
+                <div id="logsContainer">
+                    <p class="empty-msg">No logs yet. Start syncing! 🚀</p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- AI COACH TAB -->
+        <div id="chatTab" class="tab-content">
+
+            <section class="card glass chat-wrapper">
+                <div class="chat-header">
+                    <div class="chat-status-dot"></div>
+                    🤖 AI Coach
+                </div>
+                <div id="chatMessages" class="chat-messages">
+                    <div class="chat-bubble bot">
+                        <p>Hey! I'm your AI Coach 💪 Ask me anything about your progress or goals!</p>
+                    </div>
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chatInput" placeholder="Ask me anything...">
+                    <button id="sendChatBtn" class="primary-btn small-btn">Send</button>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav glass">
+        <button class="nav-item active" data-tab="homeTab">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </button>
+        <button class="nav-item" data-tab="statsTab">
+            <span class="nav-icon">📊</span>
+            <span>Stats</span>
+        </button>
+        <button class="nav-item" data-tab="chatTab">
+            <span class="nav-icon">🤖</span>
+            <span>AI Coach</span>
+        </button>
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
