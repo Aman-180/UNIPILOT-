@@ -1,5 +1,5 @@
 const API_URL = "http://localhost:5000/api";
-const GEMINI_API_KEY = "AIzaSyBA7csQr8zsnTFS3Ro5PLQ_TDS0LwmeVQQ";
+const GEMINI_API_KEY = "";
 
 document.addEventListener("DOMContentLoaded", () => {
 
